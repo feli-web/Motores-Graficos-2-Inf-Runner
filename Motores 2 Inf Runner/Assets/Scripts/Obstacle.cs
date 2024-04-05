@@ -16,9 +16,13 @@ public class Obstacle : MonoBehaviour
     void Update()
     {
         this.transform.Translate(0, 0, -speed * Time.deltaTime);
-        if (transform.position.z  < -3 || pm.isDead == true)
+        if (transform.position.z  < -3)
         {
             Destroy(gameObject);
+        }
+        if (pm.isDead == true)
+        {
+            speed = 0;
         }
     }
     
